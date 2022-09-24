@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 요청방식을 따로 지정하지 않으면 요청 기본 값은 get방식임 
+ url에 아이디, 비밀번호 다 뜸!! -->
+<!-- method: 요청방식 지정 속성(get/post)  -->
+<!-- get방식 요청 데이터 한글 인코딩 방법: Servers/server.xml -> URIEncoding="UTF-8" 추가  -->
+<!-- 톰캣8버전은 인코딩 기본값이 UTF-8을 씀 -->
+	<form action="Ex01login" method="get"> 
+		<input type="text" name="id">
+		<input type="password" name="pw">
+		<input type="submit" value="get">
+	</form>
+	
+	<form action="Ex01login" method="post">
+		<input type="text" name="id">
+		<input type="password" name="pw">
+		<input type="submit" value="post">
+	</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>DataSend</title>
+</head>
+<body>
+<!-- 요청 방식: get방식(기본값) -->
+<!-- action: 어디로 요청할 건지(url 맵핑값) -->
+	<form action="Ex03DataSend"> <!-- "/com/smhrd/servlet/Ex03DataSend" 이렇게 써야 하는데 url맵핑을 해놨기 때문에 실제 경로가 아니라 url맵핑값을 적음 -->
+		<!-- name: 어떤 값을 보내는지  -->
+		<input type="text" name='data'>
+		
+		<!-- submit: 값을 전송하는 시점(제출하는 버튼생김)  -->
+		<!-- value="SEND": 버튼 안의 글씨를 SEND로 바꿈  -->
+		<input type="submit" value="SEND">
+	</form>
+</body>
+</html>
