@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.database.MemberMapper">
+<!-- mapper 사이에 작성, 테이블별로 하나씩 mapper.xml만들어주기, sql문 작성하는 파일임! -->
+<!-- 태그엔 id라는 속성이 필수로 들어감!(변수 이름 같은 느낌), parameterType(매개변수 타입 지정해줘야 함, 객체 타입과 파라미터 타입이 일치해야 함!): 테이블에 삽입할 때 필요한 필수 속성 => 속성 값은 넣어줘야 하는 값을 가지고 있는 파일의 경로를 그대로 적어주기!  -->
+	<!-- #{parameter에서 가져오는 객체의 필드 이름을 적어주면 됨}:  -->
+	
+	<insert id="insert" parameterType="com.smhrd.model.Member">
+		insert into member values(#{id},#{pw},#{nick})
+	</insert>
+
+<!-- select에만 들어가는 속성: resultType => 어떤 타입으로 가져와서 반환할 건지!
+만약 하나만 가져오고 싶다면 생성자를 매개 변수 하나만 가지고 있는 애를 만들어주면 됨!
+ -->
+	<select id="selectOne" parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
+		select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<update id="update" parameterType="com.smhrd.model.Member">
+		update member set pw=#{pw}, nick=#{nick} where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from member where id=#{id}
+	</delete>
+	
+</mapper>
+
